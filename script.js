@@ -1,12 +1,12 @@
 // global variables declaration
-const breakLine = document.createElement("br");
-const changeGridButton = document.querySelector("#change-grid-button");
+const gridButton = document.querySelector("#change-grid-button");
 const mainBody = document.querySelector("body");
 const mainContainer = document.querySelector(".main-container");
+const cellWidth = 5;
 
 // to create 16*16 grid of square divs
 
-changeGridButton.addEventListener("click", changeGrid);
+gridButton.addEventListener("click", changeGrid);
 
 
 
@@ -14,45 +14,32 @@ changeGridButton.addEventListener("click", changeGrid);
 // make grid
 function makeGrid(num) {
 
-    changeGridButton.textContent = "Change Grid";
+    gridButton.textContent = "Change Grid";
 
     deleteGrid();
 
-    // to clear previously created grid
-
     let gridNumber = num;
 
-    // to find out max width
-    const maximumWidth = gridNumber * 30 + 30;
-    console.log(maximumWidth);
-    console.log(typeof(maximumWidth));
+    // figure out cell sizing
 
-    // const mainContainer = document.createElement("div");
-    // mainContainer.classList.add = "main-container";
-    mainContainer.style.maxWidth = `${maximumWidth}px`;
-    // mainContainer.style.backgroundColor = "blue";
-    // mainContainer.style.display = "flex";
-    // mainContainer.style.flexWrap = "wrap";
-    // mainBody.appendChild(mainContainer);
+    let cellHeight = 500 / num;
+    let cellWidth = 500 / num;
 
-    // to remove previously created grids inside main container
+    mainContainer.style.minWidth = "500px";
+    mainContainer.style.minHeight = "500px";
 
     for (let i = 0; i < gridNumber; i++) {
         for (let j = 0; j < gridNumber; j++) {
            
             let currentDivision = document.createElement("div");
-            currentDivision.classList.add = "each-division";
-            currentDivision.style.border = "1px solid orange";
-            //main container width
-
-            // mainContainer.style.maxWidth = "maxWidth";
-
-
-
-            currentDivision.style.minWidth = "30px";
-            currentDivision.style.minHeight = "30px";
+            currentDivision.classList.add = "each-cell";
+            currentDivision.style.border = "1px solid darkblue";
+            currentDivision.style.width = `${cellWidth}px`;
+            currentDivision.style.height = `${cellHeight}px`;
             mainContainer.appendChild(currentDivision);
+
             // to create hover effect
+            
             currentDivision.addEventListener("mouseover", () => {
                 currentDivision.style.backgroundColor = "green";
             });

@@ -7,7 +7,7 @@
 #main-heading {
     text-align: center;
     margin-top: 25px;
-    color: darkblue;
+    color: rgb(4, 4, 88);
 }
 
 
@@ -21,10 +21,15 @@
 
 .main-container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
-    justify-content: center;
-    align-items: center;
-    border: 5px blue solid;
+    /* border: 5px blue solid; */
     margin-top: 25px;
+    height: 500px;
+    width: 500px;
+}
+
+.each-cell {
+    /* flex: 1; */
 }
