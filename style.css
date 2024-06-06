@@ -1,9 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+#main-heading {
+    text-align: center;
+}
+
 .main-container {
     display: flex;
     flex: 1;
     flex-wrap: wrap;
+    max-width: 500px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border: 5px blue solid;
 }
 
+/* doesn't know if it works */
 .each-division {
     min-width: 100px;
     min-height: 100px;
