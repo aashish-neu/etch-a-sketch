@@ -1,0 +1,10 @@
+.main-container {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.each-division {
+    min-width: 100px;
+    min-height: 100px;
+}
