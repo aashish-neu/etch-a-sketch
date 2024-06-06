@@ -2,7 +2,8 @@
 const gridButton = document.querySelector("#change-grid-button");
 const mainBody = document.querySelector("body");
 const mainContainer = document.querySelector(".main-container");
-const cellWidth = 5;
+let currentCellOpacity = 60;
+// const cellWidth = 5;
 
 // to create 16*16 grid of square divs
 
@@ -18,7 +19,7 @@ function makeGrid(num) {
 
     deleteGrid();
 
-    let gridNumber = num;
+    const gridNumber = num;
 
     // figure out cell sizing
 
@@ -39,12 +40,22 @@ function makeGrid(num) {
             mainContainer.appendChild(currentDivision);
 
             // to create hover effect
-            
+
             currentDivision.addEventListener("mouseover", () => {
                 currentDivision.style.backgroundColor = "green";
             });
             currentDivision.addEventListener("mouseout", () => {
-                currentDivision.style.backgroundColor = "red";
+                // currentDivision.style.backgroundColor = getRandomColors(); working
+                const newRandomColor = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+
+                // let newOpacity = increaseOpacity();
+
+                currentDivision.style.backgroundColor = `${newRandomColor}`;
+                // console.log(increasedOpacity);
+                console.log(newRandomColor);
+
+                // currentDivision.style.opacity = `${currentCellOpacity + 100}%`
+
             })
         }
     }
@@ -57,5 +68,41 @@ function deleteGrid() {
 function changeGrid() {
 
     gridNumber = Number(prompt("How many rows?"));
+    if (gridNumber > 100) {
+        alert("Above 100 not supported!!!");
+        return 0;
+    }
     makeGrid(gridNumber);
 }
+
+
+function getRandomColors () {
+    const randomColor = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+    // const randomColor = `#${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}`;
+    console.log(randomColor);
+    return randomColor;
+}
+
+function increaseOpacity() {
+    let increasedOpacity = currentCellOpacity + 10;
+    console.log(`Increased Opacity ${increasedOpacity}`);
+    return increasedOpacity;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// auto start grid
+
+makeGrid(16);

@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing:border-box;
     margin: 0px;
     padding: 0px;
 }
@@ -24,12 +24,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
-    /* border: 5px blue solid; */
+    /* border: 1px green solid; */
     margin-top: 25px;
     height: 500px;
     width: 500px;
-}
-
-.each-cell {
-    /* flex: 1; */
 }
