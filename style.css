@@ -4,6 +4,13 @@
     padding: 0px;
 }
 
+.container {
+    max-width: 1400px;
+    width: 100%;
+    padding-inline: 24px;
+    margin-inline: auto;
+}
+
 #main-heading {
     text-align: center;
     margin-top: 25px;
