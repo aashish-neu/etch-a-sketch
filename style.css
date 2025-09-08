@@ -24,6 +24,20 @@
     margin-right: auto;
     margin-top: 15px;
     color: darkblue;
+    padding-inline: 16px;
+    padding-block: 12px;
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+        color: blue;
+    }
 }
 
 .main-container {
